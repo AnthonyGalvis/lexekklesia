@@ -136,12 +136,21 @@
     width:100%; height:auto; display:block; border-radius:20px;
     box-shadow:0 30px 70px -24px rgba(22,38,74,0.28);
   }
-  .hero.hero-light .hero-ctas{ margin-top:36px; }
-  .hero.hero-light .hero-stats{
-    border-top:1px solid var(--mist-dark); max-width:600px;
+  .hero.hero-light .hero-ctas{
+    margin-top:32px; justify-content:center;
   }
-  .hero.hero-light .hero-stat .val{ color:var(--navy); }
-  .hero.hero-light .hero-stat .lbl{ color:var(--gray); }
+  .hero.hero-light .hero-ctas .btn{ padding:13px 28px; font-size:14.5px; }
+  .hero.hero-light .hero-stats{
+    border-top:1px solid var(--mist-dark); max-width:640px;
+    margin-left:auto; margin-right:auto; justify-content:center; padding-top:24px; margin-top:40px;
+    flex-wrap:wrap; row-gap:20px;
+  }
+  .hero.hero-light .hero-stat{
+    flex:none; padding:0 26px; text-align:center; border-right:1px solid var(--mist-dark);
+  }
+  .hero.hero-light .hero-stat:last-child{ border-right:none; }
+  .hero.hero-light .hero-stat .val{ color:var(--navy); font-size:22px; }
+  .hero.hero-light .hero-stat .lbl{ color:var(--gray); font-size:11px; }
 
   /* ---------------- MARQUEE STRIP ---------------- */
   .strip{ background:var(--gold); overflow:hidden; padding:13px 0; }
@@ -321,6 +330,9 @@
     .hero h1{ font-size:32px; }
     .hero-ctas{ flex-direction:column; align-items:stretch; }
     .hero-ctas .btn{ width:100%; }
+    .hero.hero-light .hero-stats{ flex-wrap:wrap; row-gap:20px; }
+    .hero.hero-light .hero-stat{ flex:0 0 50%; padding:0 10px; border-right:none; }
+    .hero-banner-img{ border-radius:14px; }
     section{ padding:70px 0; }
     .section-head h2{ font-size:28px; }
     .details-grid{ grid-template-columns:1fr; }
