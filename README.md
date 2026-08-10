@@ -12,11 +12,10 @@ Sitio web estático del taller **Ordenamiento Jurídico Eclesial**, dictado por 
 - `emblem.png` — emblema de la marca
 - `og-image.jpg` — imagen para vista previa al compartir el link (WhatsApp, redes)
 - `robots.txt`, `sitemap.xml` — indexación SEO
-- `vercel.json` — cabeceras de seguridad (CSP, HSTS, X-Frame-Options, etc.) y cache
 
 ## Despliegue
 
-Publicado en Vercel bajo el dominio [lexekklesia.cl](https://lexekklesia.cl). Cualquier `git push` a la rama `main` (repo conectado en Vercel → Settings → Git) redespliega automáticamente.
+Publicado en HostGator bajo el dominio [lexekklesia.cl](https://lexekklesia.cl), vía cPanel → Git™ Version Control (repo clonado directo en la carpeta pública del dominio). Después de cada `git push` a `main`, hay que entrar a cPanel → Git™ Version Control → repo `lexekklesia` → pestaña "Pull or Deploy" → **"Update from Remote"** para traer los cambios (no es automático).
 
 ## Contacto
 

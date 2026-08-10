@@ -1,4 +1,10 @@
-// ---- NAV scroll state ----
+// ---- Google Analytics 4 ----
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-H3Q46LV3QG');
+
+  // ---- NAV scroll state ----
   const nav = document.getElementById('siteNav');
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 40);
