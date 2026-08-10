@@ -2,6 +2,8 @@
 
 Sitio web estático del taller **Ordenamiento Jurídico Eclesial**, dictado por Lex Ekklesía.
 
+🔗 [lexekklesia.cl](https://lexekklesia.cl)
+
 ## Contenido
 
 - `index.html` — página principal (hero, carrusel del temario, programa de clases, fechas y valores, expositor, CTA)
@@ -14,7 +16,7 @@ Sitio web estático del taller **Ordenamiento Jurídico Eclesial**, dictado por 
 
 ## Despliegue
 
-Publicado en Vercel. Cualquier `git push` a la rama `main` (una vez conectado el repo en Vercel → Settings → Git) redespliega automáticamente.
+Publicado en Vercel bajo el dominio [lexekklesia.cl](https://lexekklesia.cl). Cualquier `git push` a la rama `main` (repo conectado en Vercel → Settings → Git) redespliega automáticamente.
 
 ## Contacto
 
