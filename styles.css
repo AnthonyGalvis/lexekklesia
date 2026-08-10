@@ -12,6 +12,10 @@
     --sans: 'Calibri','Segoe UI','Helvetica Neue',Arial,sans-serif;
   }
   *{ margin:0; padding:0; box-sizing:border-box; }
+  .sr-only{
+    position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden;
+    clip:rect(0,0,0,0); white-space:nowrap; border:0;
+  }
   html{ scroll-behavior:smooth; }
   body{
     font-family:var(--sans);
@@ -121,6 +125,23 @@
   .hero-stat{ flex:1; padding-right:20px; }
   .hero-stat .val{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-light); }
   .hero-stat .lbl{ font-size:12px; color:rgba(255,255,255,0.6); text-transform:uppercase; letter-spacing:1px; margin-top:4px; }
+
+  /* ---------------- HERO LIGHT (banner con imagen) ---------------- */
+  .hero.hero-light{ background:var(--white); color:var(--ink); }
+  .hero.hero-light::before,
+  .hero.hero-light::after,
+  .hero.hero-light .hero-emblem-bg{ display:none; }
+  .hero.hero-light .hero-inner{ max-width:none; }
+  .hero-banner-img{
+    width:100%; height:auto; display:block; border-radius:20px;
+    box-shadow:0 30px 70px -24px rgba(22,38,74,0.28);
+  }
+  .hero.hero-light .hero-ctas{ margin-top:36px; }
+  .hero.hero-light .hero-stats{
+    border-top:1px solid var(--mist-dark); max-width:600px;
+  }
+  .hero.hero-light .hero-stat .val{ color:var(--navy); }
+  .hero.hero-light .hero-stat .lbl{ color:var(--gray); }
 
   /* ---------------- MARQUEE STRIP ---------------- */
   .strip{ background:var(--gold); overflow:hidden; padding:13px 0; }
