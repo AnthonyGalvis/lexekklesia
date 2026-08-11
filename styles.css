@@ -147,7 +147,21 @@
   .hero-banner-stage{
     width:calc(100% + 56px); max-width:calc(100% + 56px); margin:0 -28px;
   }
-  .hero-banner-img{ width:100%; height:auto; display:block; }
+  .hero-carousel-viewport{ overflow:hidden; }
+  .hero-carousel-track{ display:flex; align-items:flex-start; transition:transform .55s var(--ease-in-out); cursor:grab; }
+  .hero-carousel-track.dragging{ transition:none; cursor:grabbing; }
+  .hero-slide{ flex:0 0 100%; position:relative; }
+  .hero-banner-img{ width:100%; height:auto; display:block; pointer-events:none; }
+  .hero-slide-cta{
+    position:absolute; left:16.2%; top:76.2%; width:17%; height:5.7%;
+    border-radius:8px;
+  }
+  .hero-carousel-dots{ display:flex; gap:9px; justify-content:center; margin-top:16px; }
+  .hero-carousel-dots .cdot{
+    width:8px; height:8px; border-radius:50%; border:none; padding:0; cursor:pointer;
+    background:var(--mist-dark); transition:background .2s ease, transform .2s ease;
+  }
+  .hero-carousel-dots .cdot.active{ background:var(--gold); transform:scale(1.25); }
   .hero.hero-light .hero-ctas{
     margin-top:32px; justify-content:center;
   }
