@@ -293,6 +293,10 @@
   .exp-avatar{
     width:190px; height:190px; border-radius:50%; background:var(--navy);
     display:flex; align-items:center; justify-content:center; position:relative; border:2px solid var(--gold);
+    transition:transform .7s var(--ease-in-out);
+  }
+  @media (hover:hover) and (pointer:fine){
+    .exp-avatar:hover{ transform:perspective(700px) rotateY(360deg); }
   }
   .exp-avatar .ring-deco{ position:absolute; width:230px; height:230px; border-radius:50%; border:1px solid var(--gold); opacity:.3; }
   .exp-name{ font-family:var(--serif); font-size:28px; color:var(--navy); }
