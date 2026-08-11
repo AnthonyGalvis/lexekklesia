@@ -24,25 +24,6 @@
     });
   }
 
-  // ---- Hero banner depth tilt (mouse-fine only) ----
-  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches
-      && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    const heroStage = document.getElementById('heroBannerStage');
-    const heroImg = heroStage ? heroStage.querySelector('.hero-banner-img') : null;
-    if (heroStage && heroImg) {
-      heroStage.addEventListener('mousemove', e => {
-        const r = heroStage.getBoundingClientRect();
-        const px = (e.clientX - r.left) / r.width - 0.5;
-        const py = (e.clientY - r.top) / r.height - 0.5;
-        heroImg.style.transition = 'transform 60ms linear';
-        heroImg.style.transform = `perspective(1000px) rotateX(${(-py * 4).toFixed(2)}deg) rotateY(${(px * 4).toFixed(2)}deg)`;
-      });
-      heroStage.addEventListener('mouseleave', () => {
-        heroImg.style.transition = 'transform 500ms var(--ease-out)';
-        heroImg.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
-      });
-    }
-  }
 
   // ---- NAV scroll state ----
   const nav = document.getElementById('siteNav');

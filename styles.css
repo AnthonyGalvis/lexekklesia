@@ -146,12 +146,8 @@
   .hero.hero-light .hero-inner{ max-width:none; }
   .hero-banner-stage{
     width:calc(100% + 56px); max-width:calc(100% + 56px); margin:0 -28px;
-    perspective:1000px;
   }
-  .hero-banner-img{
-    width:100%; height:auto; display:block;
-    transform-style:preserve-3d; transition:transform .5s var(--ease-out);
-  }
+  .hero-banner-img{ width:100%; height:auto; display:block; }
   .hero.hero-light .hero-ctas{
     margin-top:32px; justify-content:center;
   }
