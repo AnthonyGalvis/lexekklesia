@@ -4,6 +4,46 @@
   gtag('js', new Date());
   gtag('config', 'G-H3Q46LV3QG');
 
+  // ---- Price card 3D tilt (mouse-fine only) ----
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches
+      && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.price-card[data-tilt]').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const r = card.getBoundingClientRect();
+        const px = (e.clientX - r.left) / r.width - 0.5;
+        const py = (e.clientY - r.top) / r.height - 0.5;
+        card.style.transition = 'transform 60ms linear';
+        card.style.transform = `perspective(1000px) rotateX(${(-py * 10).toFixed(2)}deg) rotateY(${(px * 10).toFixed(2)}deg) scale(1.02)`;
+      });
+      card.addEventListener('mouseenter', () => card.classList.add('shine'));
+      card.addEventListener('mouseleave', () => {
+        card.style.transition = 'transform 400ms var(--ease-out)';
+        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+        card.classList.remove('shine');
+      });
+    });
+  }
+
+  // ---- Hero banner depth tilt (mouse-fine only) ----
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches
+      && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const heroStage = document.getElementById('heroBannerStage');
+    const heroImg = heroStage ? heroStage.querySelector('.hero-banner-img') : null;
+    if (heroStage && heroImg) {
+      heroStage.addEventListener('mousemove', e => {
+        const r = heroStage.getBoundingClientRect();
+        const px = (e.clientX - r.left) / r.width - 0.5;
+        const py = (e.clientY - r.top) / r.height - 0.5;
+        heroImg.style.transition = 'transform 60ms linear';
+        heroImg.style.transform = `perspective(1000px) rotateX(${(-py * 4).toFixed(2)}deg) rotateY(${(px * 4).toFixed(2)}deg)`;
+      });
+      heroStage.addEventListener('mouseleave', () => {
+        heroImg.style.transition = 'transform 500ms var(--ease-out)';
+        heroImg.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+      });
+    }
+  }
+
   // ---- NAV scroll state ----
   const nav = document.getElementById('siteNav');
   window.addEventListener('scroll', () => {
@@ -38,6 +78,12 @@
   function render() {
     track.style.transform = `translateX(-${current * 100}%)`;
     dots.forEach((d, i) => d.classList.toggle('active', i === current));
+    const activeIcon = slides[current].querySelector('.icon-circle');
+    if (activeIcon && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      activeIcon.classList.remove('flip-in');
+      void activeIcon.offsetWidth;
+      activeIcon.classList.add('flip-in');
+    }
   }
   function goTo(i) {
     current = (i + slides.length) % slides.length;
