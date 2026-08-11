@@ -167,5 +167,5 @@
   initCarousel({
     trackId: 'heroCarTrack', dotsId: 'heroCarDots',
     viewport: document.querySelector('.hero-carousel-viewport'), wrap: document.querySelector('.hero-banner-stage'),
-    autoplayMs: 6000, flipIcons: false,
+    autoplayMs: 5000, flipIcons: false,
   });
