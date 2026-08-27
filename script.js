@@ -43,6 +43,9 @@
 
   function closeMenu() {
     navLinks.classList.remove('open');
+    navLinks.style.transform = 'translateY(-12px)';
+    navLinks.style.opacity = '0';
+    navLinks.style.pointerEvents = 'none';
     navToggle.setAttribute('aria-expanded', 'false');
     navToggle.setAttribute('aria-label', 'Abrir menú');
     document.body.style.overflow = '';
@@ -50,6 +53,9 @@
   function openMenu() {
     setNavHeight();
     navLinks.classList.add('open');
+    navLinks.style.transform = 'translateY(0)';
+    navLinks.style.opacity = '1';
+    navLinks.style.pointerEvents = 'auto';
     navToggle.setAttribute('aria-expanded', 'true');
     navToggle.setAttribute('aria-label', 'Cerrar menú');
     document.body.style.overflow = 'hidden';
