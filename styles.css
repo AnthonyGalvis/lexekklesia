@@ -153,7 +153,7 @@
   .hero-slide{ flex:0 0 100%; position:relative; }
   .hero-banner-img{ width:100%; height:auto; display:block; pointer-events:none; }
   .hero-slide-cta{
-    position:absolute; left:16.2%; top:76.2%; width:17%; height:5.7%;
+    position:absolute; left:16.3%; top:76.1%; width:16.9%; height:5.5%;
     border-radius:8px;
   }
   .hero-carousel-dots{ display:flex; gap:9px; justify-content:center; margin-top:16px; }
